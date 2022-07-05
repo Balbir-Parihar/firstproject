@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+      .lg {
+        font-size: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading-1">Hello</h1>
+    <img src="" alt="" id="image-1" />
+    <img src="" alt="" id="image-1" />
+    <img src="" alt="" id="image-1" />
+    <img src="" alt="" id="image-1" />
+
+    <h3 class="heading-3">Lorem, ipsum.</h3>
+    <h3 class="heading-3">Vitae, soluta?</h3>
+    <h3 class="heading-3">Ratione, temporibus.</h3>
+    <h3 class="heading-3">Animi, quia!</h3>
+    <h3 class="heading-3">Rem, totam?</h3>
+    <h3 class="heading-3">Deleniti, velit?</h3>
+    <h3 class="heading-3">Numquam, possimus.</h3>
+    <h3 class="heading-3">Architecto, corporis!</h3>
+    <h3 class="heading-3">In, minus.</h3>
+    <h3 class="heading-3">Fugiat, iusto.</h3>
+    <h3 class="heading-3">Velit, rerum.</h3>
+    <h3 class="heading-3">Commodi, hic.</h3>
+    <h3 class="heading-3">Quaerat, repudiandae.</h3>
+    <h3 class="heading-3">Ut, vero.</h3>
+    <h3 class="heading-3">At, id.</h3>
+    <h3 class="heading-3">Animi, adipisci.</h3>
+    <h3 class="heading-3">Repudiandae, perspiciatis?</h3>
+    <h3 class="heading-3">Pariatur, ea.</h3>
+    <h3 class="heading-3">Nemo, porro.</h3>
+    <h3 class="heading-3">Excepturi, illo.</h3>
+    <h3 class="heading-3">Voluptatibus, praesentium!</h3>
+    <h3 class="heading-3">Velit, quaerat!</h3>
+    <h3 class="heading-3">Corporis, voluptatibus!</h3>
+    <h3 class="heading-3">Aliquid, necessitatibus?</h3>
+    <h3 class="heading-3">Doloribus, id.</h3>
+    <h3 class="heading-3">A, iusto.</h3>
+    <h3 class="heading-3">Assumenda, vitae.</h3>
+    <h3 class="heading-3">Ipsam, fugiat.</h3>
+    <h3 class="heading-3">Iste, placeat.</h3>
+    <h3 class="heading-3">Nemo, corporis!</h3>
+    <h3 class="heading-3">Ad, placeat!</h3>
+    <h3 class="heading-3">Explicabo, ullam.</h3>
+    <h3 class="heading-3">Quaerat, vitae.</h3>
+    <h3 class="heading-3">Quae, labore?</h3>
+    <h3 class="heading-3">Repudiandae, blanditiis.</h3>
+    <h3 class="heading-3">Harum, deleniti?</h3>
+    <h3 class="heading-3">Nisi, quos?</h3>
+    <h3 class="heading-3">Quisquam, quam!</h3>
+    <h3 class="heading-3">Tempora, ea.</h3>
+    <h3 class="heading-3">Mollitia, impedit?</h3>
+    <h3 class="heading-3">Consequatur, ipsa?</h3>
+    <h3 class="heading-3">Similique, et!</h3>
+    <h3 class="heading-3">Non, soluta!</h3>
+    <h3 class="heading-3">Numquam, culpa!</h3>
+    <h3 class="heading-3">Repudiandae, unde?</h3>
+    <h3 class="heading-3">Voluptate, deserunt?</h3>
+    <h3 class="heading-3">Velit, necessitatibus.</h3>
+    <h3 class="heading-3">Doloremque, temporibus.</h3>
+    <h3 class="heading-3">Omnis, perferendis.</h3>
+    <h3 class="heading-3">Repellendus, accusamus.</h3>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./async.js"></script>
+
+    <script>
+      //document.getElementById('')
+      //document.getElementsByClassName('')
+      //document.getElementByTag('')
+      const heading = document.getElementById("heading-1");
+
+      let headings = [...document.getElementsByClassName("heading-3")];
+
+      let content = [];
+      headings.forEach((el) => content.push(el.innerText));
+      setInterval(() => {
+        heading.classList.toggle("lg");
+      }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Mouse Events -->
+    <button
+      onclick="conole.log('Mouse Clicked')"
+      ondblclick="console.log('Mouse Double Clicked')"
+      ondrag="console.log('Mouse Dragged')"
+      onmousemove="console.log('Mouse Moved')"
+      onmouseenter="console.log('Mouse Entered')"
+      onmouseleave="console.log('Mouse Left')"
+      draggable="true"
+    >
+      test
+    </button>
+
+    <button onclick="clicked(event)">Click Me</button>
+
+    <!-- Second Method to Handle Event -->
+
+    <button id="button1">Listen Clicks</button>
+    <br />
+    <button class="submit">Submit</button>
+    <button class="submit">Submit</button>
+    <button class="submit">Submit</button>
+    <button class="submit">Submit</button>
+    <button class="submit">Submit</button>
+    <button class="submit">Submit</button>
+
+    <!-- Keyboard Events -->
+
+    <input
+      type="text"
+      class="field"
+      onkeypress="keypress(event)"
+      onkeyup="console.log('Key Released')"
+    />
+    <input
+      type="text"
+      class="field"
+      onkeypress="keypress(event)"
+      onkeyup="console.log('Key Released')"
+    />
+    <input
+      type="text"
+      class="field"
+      onkeypress="keypress(event)"
+      onkeyup="console.log('Key Released')"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function clicked(e) {
+        console.log("Mouse Clicked", e.clientX, e.clientY);
+        console.log(e);
+      }
+
+      let button1 = document.querySelector("#button1");
+      button1.addEventListener("click", () => {
+        console.log("Listen Mouse Clicks");
+      });
+
+      let buttons = document.querySelectorAll(".submit");
+      button.forEach((el) => {
+        el.addEventListener("Click", () => {
+          console.log("Submit Button Clicked");
+        });
+        el.addEventListener("dblclick", () => {
+          console.log("Submit Button Double CLicked");
+        });
+      });
+
+      //   Keyboard Events
+
+      function keypress(e) {
+        if (e.key == "Enter") console.log("Key Pressed", e.target.value);
+      }
+
+      let inputs = document.querySelectorAll(".field");
+      inputs.forEach((el) =>
+        el.addEventListener("Keyup", (event) => {
+          if (event.key === "Enter") console.log(event.target.value);
+        })
+      );
+    </script>
+  </body>
+</html>

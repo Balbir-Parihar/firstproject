@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onchange="updateFormData(event)" onsubmit="handleFormSubmit(event)">
+      <input type="text" placeholder="Name" name="name" />
+      <input type="text" placeholder="Email" name="email" />
+      <input type="number" placeholder="Age" name="age" />
+      <input type="text" placeholder="Password" name="password" />
+
+      <button>Submit</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      let formData = {}; //global variable
+      let URL = "";
+      function updateFormData(e) {
+        let key = e.target.name;
+        let value = e.target.value;
+        formData[key] = value;
+        console.log(formData);
+      }
+
+      async function handleFormSubmit(e) {
+        e.preventDefault();
+        let response = await axios.post(URL, formData);
+        // let response = await fetch(URL, {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(formData),
+        // });
+        console.log(respose.status);
+      }
+    </script>
+  </body>
+</html>

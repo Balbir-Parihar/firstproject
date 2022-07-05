@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body bgcolor="gray">
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>ID</th>
+          <th>Names</th>
+          <th>Model</th>
+          <th>Manufacturer</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let a = document.querySelector(".headings");
+      let all = document.querySelectorAll("h3");
+      let tbody = document.querySelector("#tableBody");
+
+      async function renderCars() {
+        let { data } = await axios(
+          "https://6219cf0581d4074e85b1f64b.mockapi.io/cars"
+        );
+        data.forEach((car) => {
+          tableBody.innerHTML += `
+                <tr>
+                    <td><img src="http://picsum.photos/50"/></td>
+                    <td>${car.id}</td>
+                    <td>${car.name}</td>
+                    <td>${car.model}</td>
+                    <td>${car.manufacturer}</td>
+                </tr>
+            `;
+        });
+      }
+    </script>
+  </body>
+</html>
